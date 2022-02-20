@@ -18,27 +18,27 @@
 
 ```mermaid
 flowchart LR;
-Uno_3V3 -. orange .-- L75_VCC
-Uno_5V --red --- L75_VCC
-Uno_A4 -- blue --> L75_SDA
-Uno_A5 -- white --- L75_SCL
-Uno_GND -- black --- L75_GND
+Uno_3V3-.orange.--L75_VCC
+Uno_5V--red---L75_VCC
+Uno_A4--blue-->L75_SDA
+Uno_A5--white---L75_SCL
+Uno_GND--black---L75_GND
 ```
 
 ## Example ADC (ADS1115)
 
 ```mermaid
   flowchart LR
-    Uno_3V3(3V3)-.-ADS1115_VDD(VDD) 
-    Uno_5V(5V)---ADS1115_VDD(VDD)
-    Uno_5V(5V)---SensorVCC(VCC)
-    Uno_GND(GND)-----ADS1115_GND(GND)
-    Uno_GND(GND)------SensorGND(GND)
-    Uno_A4(A4)---ADS1115_SDA(SDA)
-    Uno_A5(A5)---ADS1115_SCL(SCL)
-    ADS1115_A0(A0)---Sensor1(Temperature)
-    ADS1115_A1(A1)---Sensor2(Humidity)
-    subgraph Sensor
+    Uno_3V3(3V3)-.-|orange|ADS1115_VDD(VDD) 
+    Uno_5V(5V)---|red|ADS1115_VDD(VDD)
+    Uno_5V(5V)---|red|SensorVCC(VCC)
+    Uno_GND(GND)-----|black|ADS1115_GND(GND)
+    Uno_GND(GND)------|black|SensorGND(GND)
+    Uno_A4(A4)---|blue|ADS1115_SDA(SDA)
+    Uno_A5(A5)---|white|ADS1115_SCL(SCL)
+    ADS1115_A0(A0)---|brown|Sensor1(Temperature)
+    ADS1115_A1(A1)---|brown|Sensor2(Humidity)
+    subgraph Analog Sensor
       SensorVCC(VCC)
       SensorGND(GND)
       Sensor1(Temperature)
