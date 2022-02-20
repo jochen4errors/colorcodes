@@ -18,7 +18,6 @@
 
 ```mermaid
 flowchart LR;
-<<<<<<< HEAD
 
 style +5V fill:orange
 style +3V3 fill:red
