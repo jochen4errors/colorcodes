@@ -60,8 +60,8 @@ flowchart LR;
     Uno_GND(GND)-----|black|SensorGND(GND)
     Uno_A4(A4)---|blue|ADS1115_SDA(SDA)
     Uno_A5(A5)---|white|ADS1115_SCL(SCL)
-    ADS1115_A0(A0)---|brown|Sensor1(Temperature)
-    ADS1115_A1(A1)---|brown|Sensor2(Humidity)
+    ADS1115_A0(A0)---|"brown 🌡️"|Sensor1(Temperature)
+    ADS1115_A1(A1)---|"brown 💦"|Sensor2(Humidity)
 
     subgraph Analog Sensor
       SensorVCC(VCC)
