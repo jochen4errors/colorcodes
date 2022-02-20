@@ -20,8 +20,8 @@
 flowchart LR;
 
 Uno_3V3 -- orange -.- L75_VCC
-Uno_5V --- +5V --- L75_VCC
-Uno_A4 --- SDA --- L75_SDA
-Uno_A5 --- SCL --- L75_SCL
-Uno_GND ---GND --- L75_GND
+Uno_5V -- red --- L75_VCC
+Uno_A4 -- blue --- L75_SDA
+Uno_A5 -- white --- L75_SCL
+Uno_GND -- black --- L75_GND
 ```
