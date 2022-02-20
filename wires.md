@@ -23,8 +23,8 @@ flowchart LR;
   Uno_A4---|blue|L75_SDA
   Uno_A5---|white|L75_SCL
   Uno_GND---|black|L75_GND
-  Battery_V(+9v)===|violet|Uno_Battery_Plug+(+V)
-  Battery_GND(GND)===|black|Uno_Battery_Plug-(GND)
+  Battery_V(+9v)---|violet|Arduino_Uno
+  Battery_GND(GND)---|black|Arduino_Uno
   
   subgraph "🌡️ LM75"
     L75_VCC(VCC)
@@ -33,7 +33,7 @@ flowchart LR;
     L75_SCL(SCL)
   end
 
-  subgraph "Arduino Uno"
+  subgraph Arduino_Uno
     Uno_3V3(3V3)
     Uno_5V(5V)
     Uno_GND(GND)
@@ -43,11 +43,11 @@ flowchart LR;
     Uno_Battery_Plug-(GND)
   end
 
-  subgraph "🔋 Battery"
+  subgraph "Battery"
     Battery_V(+9v)
     Battery_GND(GND)
   end
-```
+ ```
 
 ## Example ADC (ADS1115)
 
@@ -62,6 +62,8 @@ flowchart LR;
     Uno_A5(A5)---|white|ADS1115_SCL(SCL)
     ADS1115_A0(A0)---|"brown 🌡️"|Sensor1(Temperature)
     ADS1115_A1(A1)---|"brown 💦"|Sensor2(Humidity)
+    Battery_V(+9v)---|violet|Arduino_Uno
+    Battery_GND(GND)---|black|Arduino_Uno
 
     subgraph Analog Sensor
       SensorVCC(VCC)
@@ -80,11 +82,16 @@ flowchart LR;
       ADS1115_A1(A1)
     end
 
-    subgraph Arduino Uno
+    subgraph Arduino_Uno
       Uno_3V3(3V3)
       Uno_5V(5V)
       Uno_GND(GND)
       Uno_A4(A4)
       Uno_A5(A5)
+    end
+
+    subgraph "Battery"
+      Battery_V(+9v)
+      Battery_GND(GND)
     end
 ```
