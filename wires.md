@@ -18,11 +18,25 @@
 
 ```mermaid
 flowchart LR;
-Uno_3V3-.orange.--L75_VCC
-Uno_5V--red---L75_VCC
-Uno_A4--blue-->L75_SDA
-Uno_A5--white---L75_SCL
-Uno_GND--black---L75_GND
+  Uno_3V3-.-|orange|L75_VCC
+  Uno_5V-.-|red|L75_VCC
+  Uno_A4---|blue|L75_SDA
+  Uno_A5---|white|L75_SCL
+  Uno_GND---|black|L75_GND
+  subgraph LM75
+    L75_VCC(VCC)
+    L75_GND(GND)
+    L75_SDA(SDA)
+    L75_SCL(SCL)
+  end
+  subgraph Arduino Uno
+      Uno_3V3(3V3)
+      Uno_5V(5V)
+      Uno_GND(GND)
+      Uno_A4(A4)
+      Uno_A5(A5)
+  end
+
 ```
 
 ## Example ADC (ADS1115)
@@ -30,10 +44,10 @@ Uno_GND--black---L75_GND
 ```mermaid
   flowchart LR
     Uno_3V3(3V3)-.-|orange|ADS1115_VDD(VDD) 
-    Uno_5V(5V)---|red|ADS1115_VDD(VDD)
+    Uno_5V(5V)-.-|red|ADS1115_VDD(VDD)
     Uno_5V(5V)---|red|SensorVCC(VCC)
     Uno_GND(GND)-----|black|ADS1115_GND(GND)
-    Uno_GND(GND)------|black|SensorGND(GND)
+    Uno_GND(GND)-----|black|SensorGND(GND)
     Uno_A4(A4)---|blue|ADS1115_SDA(SDA)
     Uno_A5(A5)---|white|ADS1115_SCL(SCL)
     ADS1115_A0(A0)---|brown|Sensor1(Temperature)
